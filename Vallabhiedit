@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vallabhi Foundation — Creating Equal Access to Education, Healthcare & Community Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#3A3184;
+  --primary-deep:#2C2566;
+  --secondary:#00A878;
+  --secondary-deep:#008762;
+  --lightblue:#E8E6F7;
+  --yellow:#F4B942;
+  --yellow-soft:#FDF3DC;
+  --ink:#1D1A33;
+  --body-col:#4A4763;
+  --white:#FFFFFF;
+  --radius:16px;
+  --maxw:1200px;
+  --display:'Changa One', system-ui, sans-serif;
+  --body:'Figtree', system-ui, sans-serif;
+  --ease-out:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--white);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.display{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.5px;line-height:1.04}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase}
+.eyebrow::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:700;font-size:15px;padding:15px 30px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.btn-green{background:var(--secondary);color:var(--white)}
+.btn-green:hover{background:var(--secondary-deep);box-shadow:0 12px 26px rgba(0,168,120,.35)}
+.btn-yellow{background:var(--yellow);color:var(--ink)}
+.btn-yellow:hover{box-shadow:0 12px 26px rgba(244,185,66,.45)}
+.btn-white{background:var(--white);color:var(--primary)}
+.btn-white:hover{box-shadow:0 12px 26px rgba(0,0,0,.2)}
+.btn-outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.75)}
+.btn-outline:hover{background:var(--white);color:var(--primary)}
+.btn-outline-purple{background:transparent;color:var(--primary);border-color:var(--primary)}
+.btn-outline-purple:hover{background:var(--primary);color:var(--white)}
+section{padding:100px 0}
+.sec-head{max-width:840px;margin:0 auto 56px;text-align:center}
+.sec-head h2{font-size:clamp(34px,4.6vw,56px);color:var(--primary)}
+.sec-head p{margin-top:16px;font-size:18px;color:var(--body-col)}
+.ph{position:relative;overflow:hidden;background:linear-gradient(140deg,var(--lightblue),#D5D1F0)}
+.ph img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- SCROLL ANIMATION SYSTEM ---------- */
+[data-anim]{opacity:0;transition:opacity .8s var(--ease-out), transform .9s var(--ease-out);transition-delay:var(--d,0s);will-change:opacity,transform}
+[data-anim="up"]{transform:translateY(44px)}
+[data-anim="left"]{transform:translateX(-52px)}
+[data-anim="right"]{transform:translateX(52px)}
+[data-anim="zoom"]{transform:scale(.9)}
+[data-anim].in{opacity:1;transform:none}
+.img-reveal{position:relative;overflow:hidden}
+.img-reveal img{transform:scale(1.15);transition:transform 1.3s var(--ease-out)}
+.img-reveal::after{content:"";position:absolute;inset:0;background:var(--primary);transform:translateX(0);transition:transform 1s var(--ease-out)}
+.img-reveal.in img{transform:scale(1)}
+.img-reveal.in::after{transform:translateX(101%)}
+.img-reveal.wipe-green::after{background:var(--secondary)}
+.img-reveal.wipe-yellow::after{background:var(--yellow)}
+@media (prefers-reduced-motion: reduce){
+  [data-anim]{opacity:1 !important;transform:none !important;transition:none !important}
+  .img-reveal::after{display:none}
+  .img-reveal img{transform:none;transition:none}
+}
+
+/* ---------- TOP BAR + NAV ---------- */
+.topbar{background:var(--white);border-bottom:1px solid #EFEDF8}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:46px}
+.topbar .socials{display:flex;gap:8px}
+.topbar .socials a{width:28px;height:28px;border-radius:50%;background:var(--lightblue);color:var(--primary);display:grid;place-items:center;font-size:12px;font-weight:800;transition:.15s}
+.topbar .socials a:hover{background:var(--primary);color:var(--white)}
+.callus{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--body-col)}
+.callus b{display:block;color:var(--ink);font-size:14px}
+.callus .avatar{width:34px;height:34px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font-size:16px}
+header{position:sticky;top:0;z-index:50;background:var(--primary);color:var(--white);box-shadow:0 2px 16px rgba(30,25,80,.3)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:44px;height:44px;border-radius:50%;background:var(--white);display:grid;place-items:center;font-family:var(--display);font-size:22px;color:var(--primary);flex-shrink:0}
+.logo-text{font-family:var(--display);font-size:20px;letter-spacing:.5px;line-height:1.05;text-transform:uppercase}
+.logo-text small{display:block;font-family:var(--body);font-weight:600;font-size:10.5px;letter-spacing:2.5px;opacity:.85}
+.nav-links{display:flex;gap:30px;font-weight:600;font-size:15px}
+.nav-links a{opacity:.92;padding:6px 0;border-bottom:2px solid transparent;transition:.15s}
+.nav-links a:hover{opacity:1;border-color:var(--yellow)}
+.nav-cta{display:flex;gap:12px;align-items:center}
+.nav-cta .btn{padding:11px 24px;font-size:14px}
+.menu-btn{display:none;background:none;border:none;color:var(--white);font-size:26px;cursor:pointer}
+
+/* ---------- HERO ---------- */
+.hero{background:var(--primary);color:var(--white);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-140px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle, rgba(244,185,66,.16), transparent 65%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:end;min-height:640px;position:relative}
+.hero-copy{padding:96px 40px 110px 0;align-self:center}
+.hero-copy .eyebrow{color:var(--yellow);margin-bottom:26px}
+.hero-copy h1{font-size:clamp(42px,5.8vw,80px);color:var(--white)}
+.hero-copy h1 .hl{display:inline-block;background:rgba(232,230,247,.22);color:var(--white);padding:0 16px;border-radius:10px}
+.hero-copy h1 .rotator{color:var(--yellow)}
+.hero-copy p{margin-top:24px;font-size:18.5px;max-width:520px;opacity:.92}
+.hero-actions{display:flex;gap:18px;margin-top:38px;flex-wrap:wrap;align-items:center}
+.hero-work-link{color:var(--white);font-weight:700;text-decoration:underline;text-underline-offset:5px}
+.hero-work-link:hover{color:var(--yellow)}
+.hero-visual{position:relative;height:100%;min-height:520px;display:flex;align-items:flex-end}
+.hero-img-wrap{width:112%;height:92%;position:relative;margin-left:-6%}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 28%;
+  -webkit-mask-image:radial-gradient(ellipse 92% 100% at 55% 100%, #000 58%, transparent 82%);
+  mask-image:radial-gradient(ellipse 92% 100% at 55% 100%, #000 58%, transparent 82%);
+  filter:saturate(1.05)}
+.hero-wing{position:absolute;left:-70px;bottom:0;width:300px;height:420px;background:radial-gradient(ellipse at bottom left, rgba(244,185,66,.25), transparent 70%);pointer-events:none}
+.hero-stats{position:absolute;left:0;bottom:-1px;transform:translateY(0);display:flex;gap:14px;z-index:3;padding-bottom:26px}
+.stat-chip{background:var(--white);color:var(--ink);border-radius:14px;padding:14px 22px;box-shadow:0 16px 34px rgba(15,10,50,.35);text-align:left}
+.stat-chip b{font-family:var(--display);font-size:28px;color:var(--primary);display:block;line-height:1}
+.stat-chip span{font-size:12.5px;font-weight:700;color:#67648A}
+.hero-anim .eyebrow,.hero-anim h1,.hero-anim p,.hero-anim .hero-actions{opacity:0;transform:translateY(30px);animation:heroIn 1s var(--ease-out) forwards}
+.hero-anim h1{animation-delay:.12s}
+.hero-anim p{animation-delay:.26s}
+.hero-anim .hero-actions{animation-delay:.4s}
+@keyframes heroIn{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.hero-anim .eyebrow,.hero-anim h1,.hero-anim p,.hero-anim .hero-actions{animation:none;opacity:1;transform:none}}
+.hero-ticker{background:var(--lightblue);padding:15px 0;overflow:hidden}
+.ticker-track{display:flex;gap:56px;white-space:nowrap;font-weight:700;letter-spacing:2px;font-size:13px;text-transform:uppercase;opacity:.85;animation:ticker 28s linear infinite;width:max-content;color:var(--primary);opacity:1}
+.ticker-track span::before{content:"✦";color:var(--yellow);margin-right:14px}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.ticker-track{animation:none}}
+
+/* ---------- WHAT WE DO — photo columns ---------- */
+#what-we-do{background:var(--white)}
+.causes{display:flex;gap:0;height:560px;margin:0 calc(50% - 50vw);width:100vw}
+.cause{position:relative;flex:1;border-radius:0;overflow:hidden;cursor:pointer;transition:flex .6s cubic-bezier(.7,0,.3,1);display:flex}
+.cause.active{flex:4.6}
+.cause-spine{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:28px 0;transition:opacity .3s;z-index:2}
+.cause-spine .v-label{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;font-size:16.5px;color:var(--white);letter-spacing:.5px;display:flex;align-items:center;gap:12px}
+.cause-spine .v-label i{font-style:normal;font-size:20px;transform:rotate(90deg)}
+.cause-body{opacity:0;pointer-events:none;padding:36px 36px 0;color:var(--white);display:flex;flex-direction:column;gap:12px;transition:opacity .45s .22s;width:100%;min-width:360px;position:relative;z-index:2}
+.cause.active .cause-spine{opacity:0}
+.cause.active .cause-body{opacity:1;pointer-events:auto}
+.cause-body h3{font-family:var(--display);font-size:30px;text-transform:uppercase;line-height:1.05;display:flex;gap:12px;align-items:center}
+.cause-body p{font-size:15.5px;max-width:400px;opacity:.95}
+.cause-body .mini-link{margin-top:4px;align-self:flex-start;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.65);border-radius:999px;padding:10px 20px;font-weight:700;font-size:13.5px;transition:.15s}
+.cause-body .mini-link:hover{background:var(--white);color:var(--ink)}
+.cause-photo{position:absolute;right:0;bottom:0;width:52%;height:62%;z-index:1;opacity:0;transform:translateY(30px);transition:opacity .5s .3s, transform .6s .3s var(--ease-out)}
+.cause.active .cause-photo{opacity:1;transform:none}
+.cause-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:18px 0 0 0;box-shadow:-14px -14px 34px rgba(0,0,0,.28)}
+.c-green{background:linear-gradient(150deg,#00A878,#007D5A)}
+.c-purple{background:linear-gradient(150deg,#3A3184,#292158)}
+.c-yellowc{background:linear-gradient(150deg,#E3A62F,#C98F1B)}
+.c-red{background:linear-gradient(150deg,#D9542B,#B54118)}
+.c-brown{background:linear-gradient(150deg,#7A6335,#5E4C26)}
+.c-grey{background:linear-gradient(150deg,#6E7178,#53565C)}
+.causes-cta{text-align:center;margin-top:46px}
+
+/* ---------- WHY WE EXIST — collage storytelling ---------- */
+.why{background:var(--lightblue);border-radius:36px;margin:0 24px;padding:100px 0}
+.why-stage{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:28px;align-items:center;max-width:1100px;margin:0 auto;padding:0 24px}
+.why-chips{display:flex;flex-direction:column;gap:22px}
+.chip{background:var(--yellow-soft);border:1.5px solid #F0DCA8;border-radius:14px;padding:18px 20px;font-size:15px;font-weight:700;color:#6B5312;box-shadow:0 8px 20px rgba(120,90,20,.08)}
+.why-center{position:relative}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:150px 150px;gap:12px}
+.collage .ph{border-radius:14px}
+.collage .ph.tall{grid-row:span 2}
+.why-quote{background:var(--white);border-radius:16px;padding:24px 26px;text-align:center;font-size:17px;font-weight:700;color:var(--ink);margin-top:14px;box-shadow:0 16px 36px rgba(58,49,132,.14)}
+.why-quote em{font-style:normal;color:var(--secondary)}
+.why-bottom{max-width:820px;margin:64px auto 0;padding:0 24px;text-align:center}
+.why-bottom p{font-size:17.5px;color:var(--body-col)}
+.vision-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1000px;margin:56px auto 0;padding:0 24px}
+.vision-card{border-radius:var(--radius);padding:36px 34px;color:var(--white);position:relative;overflow:hidden}
+.vision-card.today{background:var(--primary)}
+.vision-card.tomorrow{background:var(--secondary)}
+.vision-card::after{content:"";position:absolute;right:-60px;bottom:-60px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.08)}
+.vision-card .tag{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--yellow)}
+.vision-card h3{font-family:var(--display);text-transform:uppercase;font-size:25px;margin:10px 0 12px;line-height:1.12}
+.vision-card p{font-size:15.5px;opacity:.94;position:relative;z-index:1}
+.why-cta{text-align:center;margin-top:48px}
+
+/* ---------- BIG BAND ---------- */
+.band{background:var(--primary);color:var(--white);padding:130px 24px;text-align:center;position:relative;overflow:hidden}
+.band h2{font-size:clamp(50px,9vw,124px);line-height:.98;color:var(--lightblue)}
+.band h2 em{font-style:normal;color:var(--yellow)}
+.band p{margin:26px auto 0;max-width:560px;font-size:18px;opacity:.9}
+.band .orb{position:absolute;border-radius:50%;border:2px dashed rgba(255,255,255,.15);will-change:transform}
+.band .orb.a{width:360px;height:360px;top:-170px;left:-130px}
+.band .orb.b{width:420px;height:420px;bottom:-220px;right:-140px;border-color:rgba(244,185,66,.28)}
+
+/* ---------- CHANGE CARDS ---------- */
+.change-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.change-card{background:var(--white);border:1.5px solid #ECEAF8;border-radius:var(--radius);overflow:hidden;transition:transform .25s var(--ease-out), box-shadow .25s;display:flex;flex-direction:column}
+.change-card:hover{transform:translateY(-8px);box-shadow:0 22px 46px rgba(58,49,132,.16)}
+.change-media{height:170px}
+.change-body{padding:26px 26px 30px}
+.change-body .cat{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--secondary)}
+.change-body h3{font-family:var(--display);text-transform:uppercase;font-size:22px;color:var(--primary);margin:8px 0 10px;line-height:1.14}
+.change-body p{font-size:14.5px;color:var(--body-col)}
+.change-card.cta-card{background:var(--primary);border:none;align-items:flex-start;justify-content:center;padding:34px;gap:16px}
+.change-card.cta-card h3{color:var(--white);font-family:var(--display);text-transform:uppercase;font-size:26px;line-height:1.15}
+.change-cta{text-align:center;margin-top:48px}
+
+/* ---------- STORIES ---------- */
+.stories-sec{background:var(--lightblue);border-radius:36px;margin:0 24px}
+.stories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.story{background:var(--white);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s var(--ease-out), box-shadow .25s}
+.story:hover{transform:translateY(-8px);box-shadow:0 24px 48px rgba(58,49,132,.18)}
+.story-media{height:200px;position:relative}
+.story-media .badge{position:absolute;top:16px;left:16px;background:var(--white);color:var(--primary);font-size:11.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:8px 14px;border-radius:999px;z-index:2;box-shadow:0 6px 16px rgba(0,0,0,.15)}
+.story-body{padding:26px 26px 28px;display:flex;flex-direction:column;gap:10px;flex:1}
+.story-body h3{font-family:var(--display);text-transform:uppercase;font-size:20px;color:var(--primary);line-height:1.16}
+.story-body p{font-size:14.5px;color:var(--body-col);flex:1}
+.story-link{font-weight:800;font-size:13.5px;letter-spacing:1px;text-transform:uppercase;color:var(--secondary);display:inline-flex;gap:8px;align-items:center;margin-top:4px;transition:gap .15s, color .15s}
+.story-link:hover{color:var(--secondary-deep);gap:13px}
+
+/* ---------- DONATE ---------- */
+.donate{background:var(--primary);color:var(--white);border-radius:32px;overflow:hidden;position:relative}
+.donate-inner{display:grid;grid-template-columns:1fr 1.05fr}
+.donate-copy{padding:0;position:relative;display:flex;flex-direction:column}
+.donate-photo{height:260px}
+.donate-photo img{width:100%;height:100%;object-fit:cover}
+.donate-copy-text{padding:44px 52px 60px;display:flex;flex-direction:column;gap:18px;flex:1}
+.donate-copy .eyebrow{color:var(--yellow)}
+.donate-copy h2{font-size:clamp(34px,4.2vw,54px);color:var(--white)}
+.donate-copy p{font-size:16.5px;opacity:.92;max-width:460px}
+.trust-list{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+.trust-list li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-size:15px;font-weight:600}
+.trust-list li::before{content:"✓";flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--secondary);color:var(--white);display:grid;place-items:center;font-size:13px;font-weight:900}
+.donate-form{background:var(--white);color:var(--ink);padding:56px 48px;display:flex;flex-direction:column;gap:22px}
+.donate-form h3{font-family:var(--display);text-transform:uppercase;font-size:26px;color:var(--primary)}
+.freq-toggle{display:flex;background:var(--lightblue);border-radius:999px;padding:5px}
+.freq-toggle button{flex:1;border:none;background:transparent;font-family:var(--body);font-weight:700;font-size:14.5px;padding:11px;border-radius:999px;cursor:pointer;color:#67648A;transition:.15s}
+.freq-toggle button.on{background:var(--primary);color:var(--white)}
+.amounts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.amounts button{border:2px solid #DEDBF2;background:var(--white);border-radius:12px;padding:14px 6px;font-family:var(--display);font-size:19px;color:var(--ink);cursor:pointer;transition:.15s}
+.amounts button:hover{border-color:var(--primary)}
+.amounts button.on{background:var(--primary);border-color:var(--primary);color:var(--white)}
+.field label{display:block;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#67648A;margin-bottom:8px}
+.field input,.field select{width:100%;border:2px solid #DEDBF2;border-radius:12px;padding:14px 16px;font-family:var(--body);font-size:15.5px;background:var(--white);color:var(--ink)}
+.field input:focus,.field select:focus{outline:none;border-color:var(--secondary)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.donate-form .btn{width:100%;font-size:16.5px;padding:17px}
+.form-note{font-size:12.5px;color:#8683A5;text-align:center}
+
+/* ---------- CSR ---------- */
+.csr{background:var(--primary-deep);color:var(--white);border-radius:var(--radius);overflow:hidden;display:grid;grid-template-columns:1fr 1.3fr;align-items:stretch}
+.csr-photo{min-height:300px}
+.csr-body{padding:56px 52px;display:flex;flex-direction:column;align-items:flex-start;gap:18px;justify-content:center}
+.csr h2{font-size:clamp(30px,3.8vw,46px);color:var(--white)}
+.csr h2 span{color:var(--yellow)}
+.csr p{font-size:16.5px;opacity:.9;max-width:560px}
+
+/* ---------- FAQ ---------- */
+.faq-wrap{max-width:840px;margin:0 auto}
+.faq{border-bottom:2px solid #E4E1F4}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 4px;font-size:18px;font-weight:700;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .plus{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--primary);color:var(--white);display:grid;place-items:center;font-size:19px;transition:transform .25s, background .25s;font-weight:400}
+.faq[open] summary .plus{transform:rotate(45deg);background:var(--secondary)}
+.faq .answer{padding:0 4px 26px;font-size:16px;color:var(--body-col);max-width:700px}
+
+/* ---------- FINAL + VOLUNTEER ---------- */
+.final{background:var(--primary);color:var(--white);text-align:center;padding:120px 24px 100px;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%, rgba(244,185,66,.14), transparent 55%)}
+.final h2{font-size:clamp(36px,5.2vw,70px);max-width:980px;margin:0 auto;color:var(--lightblue);position:relative}
+.final h2 em{font-style:normal;color:var(--yellow)}
+.final p{margin:24px auto 0;max-width:520px;font-size:18px;opacity:.92;position:relative}
+.final .btn{margin-top:36px;position:relative}
+.volunteer{background:var(--secondary);color:var(--white);padding:0;overflow:hidden}
+.volunteer .wrap{display:grid;grid-template-columns:1fr 1.4fr auto;gap:40px;align-items:center}
+.vol-photo{height:100%;min-height:220px;margin:0}
+.vol-photo .ph{height:100%;border-radius:0}
+.volunteer h3{font-family:var(--display);text-transform:uppercase;font-size:clamp(24px,3vw,34px);line-height:1.12}
+.volunteer p{margin-top:10px;font-size:16px;opacity:.94;max-width:560px}
+.volunteer .btn{white-space:nowrap}
+.volunteer .vol-text{padding:48px 0}
+
+/* ---------- FOOTER ---------- */
+footer{background:#221D47;color:#C9C6E0;padding:72px 0 0}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px}
+.foot-brand .logo-text{color:var(--white)}
+.foot-brand .logo-mark{background:var(--yellow)}
+.foot-brand p{margin-top:18px;font-size:14.5px;max-width:300px;opacity:.8}
+.foot-col h4{font-weight:800;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);margin-bottom:18px}
+.foot-col a{display:block;padding:6px 0;font-size:15px;opacity:.85;transition:.15s}
+.foot-col a:hover{opacity:1;color:var(--white)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding:22px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px;opacity:.7}
+.f-socials{display:flex;gap:12px;margin-top:22px}
+.f-socials a{width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:grid;place-items:center;font-size:15px;transition:.15s}
+.f-socials a:hover{background:var(--secondary);border-color:var(--secondary);color:var(--white)}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-copy{padding:72px 0 40px}
+  .hero-visual{min-height:380px}
+  .hero-img-wrap{height:100%;border-radius:24px 24px 0 0}
+  .hero-stats{position:static;padding:0 0 26px;flex-wrap:wrap}
+  .causes{flex-direction:column;height:auto}
+  .cause{min-height:90px}
+  .cause.active{min-height:360px}
+  .cause-spine{align-items:center;justify-content:flex-start;padding:0 26px}
+  .cause-spine .v-label{writing-mode:horizontal-tb;transform:none}
+  .cause-spine .v-label i{transform:none}
+  .cause-photo{width:100%;height:46%;position:relative;margin-top:auto}
+  .cause-photo img{border-radius:0}
+  .why-stage{grid-template-columns:1fr;gap:24px}
+  .vision-row,.donate-inner,.csr{grid-template-columns:1fr}
+  .change-grid,.stories-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .nav-cta .btn-outline{display:none}
+  .volunteer .wrap{grid-template-columns:1fr;gap:0}
+  .vol-photo{margin:0 -24px}
+  .volunteer .vol-text{padding:40px 0 8px}
+  .volunteer .btn{margin-bottom:44px;justify-self:start}
+  .csr-photo{min-height:240px}
+}
+@media (max-width:640px){
+  section{padding:64px 0}
+  .change-grid,.stories-grid,.two-col,.foot-grid{grid-template-columns:1fr}
+  .amounts{grid-template-columns:1fr 1fr}
+  .donate-copy-text{padding:36px 28px 44px}
+  .donate-form{padding:40px 24px}
+  .csr-body{padding:40px 28px}
+  .why{margin:0 12px;padding:70px 0}
+  .stories-sec{margin:0 12px}
+  .topbar .socials{display:none}
+}
+
+/* ---------- HERO USP STRIP ---------- */
+.usp-strip{position:relative;z-index:4;background:var(--white);border-radius:20px;border:1.5px solid #ECEAF8;box-shadow:0 18px 44px rgba(58,49,132,.1);display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:26px 10px;margin:0 0 70px}
+.usp{display:flex;gap:14px;align-items:center;padding:6px 22px;border-right:1.5px solid #ECEAF8}
+.usp:last-child{border-right:none}
+.usp-ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:24px;flex-shrink:0}
+.ic-yellow{background:var(--yellow-soft)}
+.ic-green{background:#DCF5EC}
+.ic-purple{background:var(--lightblue)}
+.usp b{font-family:var(--display);font-size:27px;color:var(--primary);display:block;line-height:1}
+.usp span{font-size:12.5px;font-weight:700;color:#67648A;line-height:1.35;display:block;margin-top:4px}
+
+/* ---------- WHY WE EXIST — STORY JOURNEY ---------- */
+.journey{position:relative;max-width:1020px;margin:20px auto 0;padding:30px 24px 10px}
+.journey-line{position:absolute;left:50%;top:0;bottom:110px;width:4px;background:#D8D4EF;transform:translateX(-50%);border-radius:99px;overflow:hidden}
+.journey-progress{position:absolute;left:0;top:0;width:100%;height:0;background:linear-gradient(180deg,var(--secondary),var(--primary));transition:height .15s linear;border-radius:99px}
+.j-step{display:grid;grid-template-columns:1fr 88px 1fr;align-items:center;margin-bottom:72px;position:relative}
+.j-media{display:flex;justify-content:flex-end}
+.j-rev .j-media{order:3;justify-content:flex-start}
+.j-rev .j-card{order:1;text-align:right}
+.j-rev .j-card .j-chapter{flex-direction:row-reverse}
+.j-photo{width:min(340px,100%);height:230px;border-radius:18px;box-shadow:0 20px 44px rgba(58,49,132,.22);transform:rotate(-2deg)}
+.j-rev .j-photo{transform:rotate(2deg)}
+.j-dot{order:2;justify-self:center;width:58px;height:58px;border-radius:50%;background:var(--white);border:4px solid #D8D4EF;display:grid;place-items:center;font-size:22px;z-index:2;transition:border-color .4s, box-shadow .4s, transform .4s}
+.j-dot.lit{border-color:var(--secondary);box-shadow:0 0 0 8px rgba(0,168,120,.15);transform:scale(1.06)}
+.j-card{background:var(--white);border-radius:18px;padding:30px 32px;box-shadow:0 16px 38px rgba(58,49,132,.12);max-width:400px}
+.j-rev .j-card{justify-self:end}
+.j-chapter{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--secondary)}
+.j-card h3{font-family:var(--display);text-transform:uppercase;font-size:26px;color:var(--primary);margin:10px 0 8px;line-height:1.1}
+.j-card p{font-size:15.5px;color:var(--body-col);font-weight:600}
+.j-finale{position:relative;text-align:center;padding-top:6px}
+.j-dot-final{margin:0 auto 26px;background:var(--yellow);border-color:var(--yellow);color:var(--ink);font-size:24px}
+.j-dot-final.lit{border-color:var(--yellow);box-shadow:0 0 0 10px rgba(244,185,66,.25)}
+.j-quote{background:var(--primary);color:var(--white);border-radius:22px;padding:48px 46px;max-width:760px;margin:0 auto;box-shadow:0 26px 56px rgba(58,49,132,.3)}
+.j-quote h3{font-size:clamp(28px,3.8vw,44px);line-height:1.05}
+.j-quote h3 em{font-style:normal;color:var(--yellow)}
+.j-quote p{margin-top:16px;font-size:16px;opacity:.92}
+
+/* ---------- DONATE — SCAN & PAY PANEL ---------- */
+.pay-panel{background:var(--white);color:var(--ink);padding:52px 46px;display:flex;flex-direction:column;gap:20px}
+.pay-panel h3{font-family:var(--display);text-transform:uppercase;font-size:27px;color:var(--primary)}
+.pay-sub{font-size:14.5px;color:var(--body-col);margin-top:-8px}
+.pay-tabs{display:flex;background:var(--lightblue);border-radius:999px;padding:5px}
+.pay-tabs button{flex:1;border:none;background:transparent;font-family:var(--body);font-weight:700;font-size:14.5px;padding:12px;border-radius:999px;cursor:pointer;color:#67648A;transition:.15s}
+.pay-tabs button.on{background:var(--primary);color:var(--white)}
+.pay-tab-body{display:flex;flex-direction:column;gap:14px}
+.qr-card{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:linear-gradient(140deg,#F6F5FC,var(--lightblue));border-radius:18px;padding:22px}
+.qr-frame{position:relative;background:var(--white);border-radius:14px;padding:14px;box-shadow:0 12px 28px rgba(58,49,132,.14)}
+#qrBox{width:168px;height:168px;display:grid;place-items:center}
+#qrBox img,#qrBox canvas{width:168px !important;height:168px !important}
+.qr-fallback{font-size:13px;font-weight:700;color:#8683A5;text-align:center;line-height:1.5;border:2px dashed #D8D4EF;border-radius:10px;width:168px;height:168px;display:grid;place-items:center}
+.qr-corner{position:absolute;width:22px;height:22px;border:3.5px solid var(--secondary)}
+.qr-corner.tl{top:-4px;left:-4px;border-right:none;border-bottom:none;border-radius:8px 0 0 0}
+.qr-corner.tr{top:-4px;right:-4px;border-left:none;border-bottom:none;border-radius:0 8px 0 0}
+.qr-corner.bl{bottom:-4px;left:-4px;border-right:none;border-top:none;border-radius:0 0 0 8px}
+.qr-corner.br{bottom:-4px;right:-4px;border-left:none;border-top:none;border-radius:0 0 8px 0}
+.qr-side{display:flex;flex-direction:column;gap:10px}
+.qr-badge{align-self:flex-start;background:#DCF5EC;color:var(--secondary-deep);font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+.qr-hint{font-size:14.5px;color:var(--body-col);font-weight:600}
+.upi-apps{display:flex;gap:8px;flex-wrap:wrap}
+.upi-apps span{background:var(--white);border:1.5px solid #E4E1F4;border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:800;color:var(--primary)}
+.detail-row{display:flex;justify-content:space-between;align-items:center;gap:16px;background:#F8F7FD;border:1.5px solid #ECEAF8;border-radius:14px;padding:14px 18px}
+.detail-row label{display:block;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#8683A5}
+.detail-row b{font-size:16px;color:var(--ink);letter-spacing:.4px}
+.copy-btn{border:none;background:var(--primary);color:var(--white);font-family:var(--body);font-weight:700;font-size:13px;padding:10px 18px;border-radius:999px;cursor:pointer;transition:.15s;flex-shrink:0}
+.copy-btn:hover{background:var(--primary-deep)}
+.copy-btn.done{background:var(--secondary)}
+.receipt-note{display:flex;gap:14px;align-items:flex-start;background:var(--yellow-soft);border:1.5px solid #F0DCA8;border-radius:14px;padding:16px 18px}
+.receipt-note span{font-size:22px}
+.receipt-note p{font-size:13.5px;color:#6B5312;font-weight:600;line-height:1.55}
+
+@media (max-width:1000px){
+  .usp-strip{grid-template-columns:1fr 1fr;gap:8px;padding:20px 14px;transform:translateY(-24px);margin-bottom:-24px}
+  .usp{border-right:none;padding:10px 12px}
+  .journey-line{left:28px}
+  .j-step{grid-template-columns:56px 1fr;margin-bottom:52px}
+  .j-media{grid-column:2;order:2 !important;justify-content:flex-start !important;margin-top:14px}
+  .j-dot{grid-column:1;grid-row:1;width:48px;height:48px;font-size:18px}
+  .j-card{grid-column:2;grid-row:1;order:1 !important;text-align:left !important;justify-self:start !important;max-width:none}
+  .j-photo{transform:none !important;width:100%;height:200px}
+  .j-dot-final{margin-left:4px}
+  .j-finale{text-align:left}
+}
+@media (max-width:640px){
+  .usp-strip{grid-template-columns:1fr 1fr}
+  .usp b{font-size:22px}
+  .qr-card{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .qr-side{align-items:center}
+  .pay-panel{padding:40px 24px}
+  .detail-row b{font-size:14px}
+}
+
+/* ================= V4 — REFERENCE ALIGNMENT ================= */
+/* Hero: cutout-style photo, no card frame */
+.hero-img-wrap{border-radius:0;box-shadow:none;background:transparent;height:94%}
+.hero-img-wrap::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--primary) 0%,rgba(58,49,132,0) 20%),linear-gradient(180deg,var(--primary) 0%,rgba(58,49,132,0) 16%);z-index:1;pointer-events:none}
+.hero-img-wrap img{object-position:center 18%}
+
+/* USP strip: now a clean credibility bar inside What We Do */
+.usp-strip{transform:none;margin:56px auto 8px;box-shadow:0 18px 44px rgba(58,49,132,.10);border:1.5px solid #ECEAF8}
+
+/* What We Do: full-bleed square columns, no gaps */
+.causes{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw;gap:0;height:560px;margin-top:56px}
+.cause{border-radius:0}
+.cause-photo img{border-radius:0;box-shadow:none}
+
+/* Why We Exist: flush full-width lavender, editorial journey */
+.why{margin:0;border-radius:0;padding:100px 0 0}
+.journey{max-width:none;margin:44px 0 0;padding:0}
+.journey-line{bottom:0;background:#C9C4E8}
+.j-step{grid-template-columns:1fr 1fr;min-height:360px;margin-bottom:0;align-items:stretch;position:relative}
+.j-media{order:1 !important;justify-content:stretch !important;display:block;margin:0 !important}
+.j-card{order:2 !important;background:transparent;box-shadow:none;border-radius:0;padding:64px 8vw 64px 72px;max-width:600px;justify-self:start !important;text-align:left !important;align-self:center;grid-column:auto;grid-row:auto}
+.j-photo{width:100% !important;height:100% !important;border-radius:0;box-shadow:none;transform:none !important;min-height:300px}
+.j-card h3{font-size:29px}
+.j-card p{font-size:15.5px;line-height:1.7;max-width:440px}
+.j-dot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:54px;background:var(--white);border-width:3.5px;grid-column:auto;grid-row:auto;order:0}
+.j-dot.lit{transform:translate(-50%,-50%) scale(1.08)}
+.j-finale{padding:64px 0 0;text-align:center !important}
+.j-dot-final{position:relative;left:auto;top:auto;transform:none !important;width:88px;height:88px;margin:0 auto 0;background:var(--white);border:none;box-shadow:0 14px 34px rgba(58,49,132,.28);z-index:3}
+.j-dot-final.lit{transform:none !important}
+.j-logo{font-family:var(--display);font-size:38px;color:var(--primary);line-height:1}
+.j-quote{max-width:none;border-radius:0;padding:88px 24px 92px;margin:-44px 0 0;box-shadow:none}
+.j-quote h3{font-size:clamp(30px,4.4vw,52px)}
+.j-quote p{max-width:680px;margin-left:auto;margin-right:auto;font-size:15.5px}
+
+/* Vision cards: full-bleed flush pair, purple + yellow */
+.vision-row{max-width:none;margin:0;padding:0;gap:0}
+.vision-card{border-radius:0;padding:60px 8vw}
+.vision-card.today{background:var(--primary)}
+.vision-card.tomorrow{background:var(--yellow);color:var(--white)}
+.vision-card.tomorrow .tag{color:var(--white);opacity:.95}
+.vision-card.tomorrow::after{background:rgba(255,255,255,.16)}
+
+@media (max-width:1000px){
+  .causes{height:auto}
+  .journey-line{display:none}
+  .j-step{grid-template-columns:1fr;min-height:0}
+  .j-dot{display:none}
+  .j-media{height:240px;order:1 !important}
+  .j-photo{min-height:240px}
+  .j-card{order:2 !important;padding:34px 24px 46px;max-width:none}
+  .j-finale{padding:40px 24px 0}
+  .j-quote{margin-top:-44px;padding:80px 24px}
+  .vision-card{padding:48px 24px}
+  .usp-strip{margin-top:40px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="socials">
+      <a href="#" aria-label="Facebook">f</a>
+      <a href="#" aria-label="Twitter">𝕏</a>
+      <a href="#" aria-label="Instagram">◎</a>
+      <a href="#" aria-label="YouTube">▶</a>
+      <a href="#" aria-label="LinkedIn">in</a>
+    </div>
+    <div class="callus"><span class="avatar">📞</span><span>Call Us on<b>95684 52147</b></span></div>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo" aria-label="Vallabhi Foundation home">
+      <span class="logo-mark">V</span>
+      <span class="logo-text">Vallabhi<small>FOUNDATION</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#why-we-exist">About Us</a>
+      <a href="#what-we-do">Programs &amp; Events</a>
+      <a href="#csr">CSR</a>
+      <a href="#impact">Impact</a>
+      <a href="#faq">Contact Us</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#volunteer" class="btn btn-outline">Volunteer</a>
+      <a href="#donate" class="btn btn-green">Donate Now ♥</a>
+      <button class="menu-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SECTION 01 — HERO ============ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy hero-anim">
+        <span class="eyebrow">Serving Communities Across India Since 2017</span>
+        <h1 class="display">Creating Equal Access To <span class="hl rotator" id="rotator">Education</span></h1>
+        <p>Every person deserves the opportunity to learn, live a healthy life, and build a better future. Vallabhi Foundation works alongside communities to make that possible.</p>
+        <div class="hero-actions">
+          <a href="#donate" class="btn btn-white">Donate To Help <span style="background:var(--secondary);color:#fff;width:26px;height:26px;border-radius:50%;display:inline-grid;place-items:center;font-size:13px">♥</span></a>
+          <a href="#what-we-do" class="hero-work-link">Our Work ↗</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-wing" aria-hidden="true"></div>
+        <div class="hero-img-wrap" id="heroParallax">
+          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1100&q=80" alt="Smiling children from communities supported by Vallabhi Foundation" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Education</span><span>Healthcare</span><span>Women Empowerment</span><span>Blood Donation</span><span>Community Welfare</span><span>Rural Development</span>
+      <span>Education</span><span>Healthcare</span><span>Women Empowerment</span><span>Blood Donation</span><span>Community Welfare</span><span>Rural Development</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SECTION 02 — WHAT WE DO ============ -->
+<section id="what-we-do">
+  <div class="wrap">
+    <div class="usp-strip" data-anim="up">
+      <div class="usp">
+        <span class="usp-ic ic-yellow">🕊️</span>
+        <div><b><span class="count" data-target="9">0</span>+</b><span>Years Serving<br>Communities</span></div>
+      </div>
+      <div class="usp">
+        <span class="usp-ic ic-green">🎒</span>
+        <div><b><span class="count" data-target="300">0</span>+</b><span>Students Supported<br>With Education Kits</span></div>
+      </div>
+      <div class="usp">
+        <span class="usp-ic ic-purple">🤝</span>
+        <div><b><span class="count" data-target="6">0</span></b><span>Core Programs<br>Across India</span></div>
+      </div>
+      <div class="usp">
+        <span class="usp-ic ic-yellow">🧾</span>
+        <div><b>80G</b><span>Tax Benefits On<br>Every Donation</span></div>
+      </div>
+    </div>
+    <div class="sec-head">
+      <span class="eyebrow" style="color:var(--secondary)" data-anim="up">What We Do</span>
+      <h2 class="display" data-anim="up" style="--d:.08s">Building Stronger Communities Starts With Meeting Real Needs</h2>
+      <p data-anim="up" style="--d:.16s">Our work focuses on providing the support people need most — creating opportunities that help individuals, families, and communities move forward.</p>
+    </div>
+
+
+    <div class="causes" id="causes" data-anim="up" style="--d:.1s">
+      <div class="cause c-green active">
+        <div class="cause-spine"><span class="v-label"><i>📚</i> Education</span></div>
+        <div class="cause-body">
+          <h3><span>📚</span> Education</h3>
+          <p>Giving children the resources and opportunities they need to continue learning.</p>
+          <a href="#donate" class="mini-link">Donate To Support Education</a>
+        </div>
+        <div class="cause-photo"><img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=700&q=80" alt="A young student with her school bag" onerror="this.parentElement.style.display='none'"></div>
+      </div>
+      <div class="cause c-purple">
+        <div class="cause-spine"><span class="v-label"><i>❤️</i> Healthcare</span></div>
+        <div class="cause-body">
+          <h3><span>❤️</span> Healthcare</h3>
+          <p>Improving access to healthcare through awareness, support, and community initiatives.</p>
+          <a href="#donate" class="mini-link">Donate To Support Healthcare</a>
+        </div>
+        <div class="cause-photo"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=700&q=80" alt="Healthcare worker with stethoscope" onerror="this.parentElement.style.display='none'"></div>
+      </div>
+      <div class="cause c-yellowc">
+        <div class="cause-spine"><span class="v-label"><i>👩</i> Women Empowerment</span></div>
+        <div class="cause-body">
+          <h3><span>👩</span> Women Empowerment</h3>
+          <p>Helping women build confidence, independence, and stronger futures.</p>
+          <a href="#donate" class="mini-link">Empower Women Today</a>
+        </div>
+        <div class="cause-photo"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=700&q=80" alt="A confident woman smiling" onerror="this.parentElement.style.display='none'"></div>
+      </div>
+      <div class="cause c-red">
+        <div class="cause-spine"><span class="v-label"><i>🩸</i> Blood Donation</span></div>
+        <div class="cause-body">
+          <h3><span>🩸</span> Blood Donation</h3>
+          <p>Connecting generous donors with lives that depend on timely support.</p>
+          <a href="#donate" class="mini-link">Give Blood, Give Life</a>
+        </div>
+        <div class="cause-photo"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=700&q=80" alt="Medical professional at a blood donation camp" onerror="this.parentElement.style.display='none'"></div>
+      </div>
+      <div class="cause c-brown">
+        <div class="cause-spine"><span class="v-label"><i>🍛</i> Community Welfare</span></div>
+        <div class="cause-body">
+          <h3><span>🍛</span> Community Welfare</h3>
+          <p>Providing food, clothing, and essential assistance to families facing hardship.</p>
+          <a href="#donate" class="mini-link">Support Families In Need</a>
+        </div>
+        <div class="cause-photo"><img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=700&q=80" alt="Volunteers preparing food supplies for families" onerror="this.parentElement.style.display='none'"></div>
+      </div>
+      <div class="cause c-grey">
+        <div class="cause-spine"><span class="v-label"><i>🌱</i> Rural Development</span></div>
+        <div class="cause-body">
+          <h3><span>🌱</span> Rural Development</h3>
+          <p>Supporting communities through sustainable development and social welfare initiatives.</p>
+          <a href="#donate" class="mini-link">Grow With Rural India</a>
+        </div>
+        <div class="cause-photo"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=700&q=80" alt="Rural farmland at golden hour" onerror="this.parentElement.style.display='none'"></div>
+      </div>
+    </div>
+    <div class="causes-cta" data-anim="up"><a href="#donate" class="btn btn-green">Donate To Help ♥</a></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 03 — WHY WE EXIST (STORY JOURNEY) ============ -->
+<section id="why-we-exist" style="padding-top:0">
+  <div class="why">
+    <div class="sec-head">
+      <span class="eyebrow" style="color:var(--secondary)" data-anim="up">Why We Exist</span>
+      <h2 class="display" data-anim="up" style="--d:.08s">Because Everyone Deserves The Opportunity To Move Forward.</h2>
+    </div>
+
+    <div class="journey" id="journey">
+      <div class="journey-line" aria-hidden="true"><span class="journey-progress" id="journeyProgress"></span></div>
+
+      <div class="j-step">
+        <div class="j-media" data-anim="left">
+          <div class="ph img-reveal j-photo"><img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=700&q=80" alt="A classroom of children learning" onerror="this.style.display='none'"></div>
+        </div>
+        <div class="j-dot"><span>📚</span></div>
+        <div class="j-card" data-anim="right">
+          <span class="j-chapter">Chapter 01 · Education</span>
+          <h3>The Empty School Bag</h3>
+          <p>A child shouldn't miss school because they lack basic supplies. We provide the tools for a brighter future.</p>
+        </div>
+      </div>
+
+      <div class="j-step j-rev">
+        <div class="j-media" data-anim="right">
+          <div class="ph img-reveal wipe-green j-photo"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=700&q=80" alt="A healthcare worker ready to help" onerror="this.style.display='none'"></div>
+        </div>
+        <div class="j-dot"><span>❤️</span></div>
+        <div class="j-card" data-anim="left">
+          <span class="j-chapter">Chapter 02 · Healthcare</span>
+          <h3>The Longest Wait</h3>
+          <p>A patient shouldn't wait for hope to arrive. We bring care and awareness closer to the communities that need them.</p>
+        </div>
+      </div>
+
+      <div class="j-step">
+        <div class="j-media" data-anim="left">
+          <div class="ph img-reveal wipe-yellow j-photo"><img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=700&q=80" alt="Volunteers preparing food support for families" onerror="this.style.display='none'"></div>
+        </div>
+        <div class="j-dot"><span>🍛</span></div>
+        <div class="j-card" data-anim="right">
+          <span class="j-chapter">Chapter 03 · Community Welfare</span>
+          <h3>The Uncertain Evening</h3>
+          <p>A family shouldn't face hardship without support. We stand beside them with food, clothing, and everyday essentials.</p>
+        </div>
+      </div>
+
+      <div class="j-step j-rev">
+        <div class="j-media" data-anim="right">
+          <div class="ph img-reveal j-photo"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=700&q=80" alt="A woman building an independent future" onerror="this.style.display='none'"></div>
+        </div>
+        <div class="j-dot"><span>👩</span></div>
+        <div class="j-card" data-anim="left">
+          <span class="j-chapter">Chapter 04 · Women Empowerment</span>
+          <h3>The Dream On Hold</h3>
+          <p>A woman shouldn't be held back from an independent future. We help confidence grow into real opportunity.</p>
+        </div>
+      </div>
+
+      <div class="j-finale" data-anim="zoom">
+        <span class="j-dot j-dot-final"><span class="j-logo">V</span></span>
+        <div class="j-quote">
+          <h3 class="display">But Every Story <em>Can Change.</em></h3>
+          <p>These challenges exist every day — but so does the opportunity to change them. That's why Vallabhi Foundation works alongside communities, creating access to education, healthcare, and essential support that helps people move forward with dignity.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vision-row">
+      <div class="vision-card today" data-anim="left" style="--d:.05s">
+        <span class="tag">Today, We Work To</span>
+        <h3>Compassionate Action, Every Day</h3>
+        <p>Create equal access to education, healthcare, and community support through compassionate action that empowers individuals, strengthens families, and builds resilient communities.</p>
+      </div>
+      <div class="vision-card tomorrow" data-anim="right" style="--d:.15s">
+        <span class="tag">Tomorrow, We Aspire To See</span>
+        <h3>Communities That Thrive</h3>
+        <p>Communities where every individual has the opportunity, resources, and support to thrive with dignity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIG BAND ============ -->
+<div class="band">
+  <span class="orb a" data-parallax="0.15"></span>
+  <span class="orb b" data-parallax="-0.12"></span>
+  <h2 class="display" data-anim="zoom">The Change<br>Is <em>Real.</em></h2>
+  <p data-anim="up" style="--d:.15s">From classrooms to clinics to community kitchens — every act of support becomes someone's turning point.</p>
+</div>
+
+<!-- ============ SECTION 04 — THE CHANGE YOU CREATE ============ -->
+<section id="impact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" style="color:var(--secondary)" data-anim="up">The Change You Create ⭐</span>
+      <h2 class="display" data-anim="up" style="--d:.08s">Your Support Creates More Than A Donation.</h2>
+      <p data-anim="up" style="--d:.16s">It creates possibilities.</p>
+    </div>
+    <div class="change-grid">
+      <div class="change-card" data-anim="up">
+        <div class="change-media ph img-reveal"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=80" alt="A child studying in class" onerror="this.style.display='none'"></div>
+        <div class="change-body"><div class="cat">📚 Education</div><h3>A Child Returns To The Classroom.</h3><p>Giving children the confidence and resources to continue learning.</p></div>
+      </div>
+      <div class="change-card" data-anim="up" style="--d:.1s">
+        <div class="change-media ph img-reveal wipe-green"><img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=700&q=80" alt="Healthcare support reaching communities" onerror="this.style.display='none'"></div>
+        <div class="change-body"><div class="cat">❤️ Healthcare</div><h3>Care Reaches Those Who Need It.</h3><p>Helping communities access healthcare support and awareness.</p></div>
+      </div>
+      <div class="change-card" data-anim="up" style="--d:.2s">
+        <div class="change-media ph img-reveal wipe-yellow"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=700&q=80" alt="A woman building her future with confidence" onerror="this.style.display='none'"></div>
+        <div class="change-body"><div class="cat">👩 Women Empowerment</div><h3>Confidence Turns Into Opportunity.</h3><p>Supporting women as they build stronger, more independent futures.</p></div>
+      </div>
+      <div class="change-card" data-anim="up">
+        <div class="change-media ph img-reveal wipe-green"><img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=700&q=80" alt="Essential supplies reaching a family" onerror="this.style.display='none'"></div>
+        <div class="change-body"><div class="cat">🍛 Community Welfare</div><h3>A Family Finds Stability.</h3><p>Providing essential support during life's most challenging moments.</p></div>
+      </div>
+      <div class="change-card" data-anim="up" style="--d:.1s">
+        <div class="change-media ph img-reveal"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=700&q=80" alt="Lifesaving blood donation support" onerror="this.style.display='none'"></div>
+        <div class="change-body"><div class="cat">🩸 Blood Donation</div><h3>Hope Arrives On Time.</h3><p>Helping make lifesaving blood available when every second matters.</p></div>
+      </div>
+      <div class="change-card cta-card" data-anim="up" style="--d:.2s">
+        <h3>Ready To Create The Next Possibility?</h3>
+        <a href="#donate" class="btn btn-yellow">Donate To Create More Stories ♥</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 05 — IMPACT STORIES ============ -->
+<section style="padding-top:0">
+  <div class="stories-sec" style="padding:90px 0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow" style="color:var(--secondary)" data-anim="up">Our Impact</span>
+        <h2 class="display" data-anim="up" style="--d:.08s">Because Of You, Change Became Reality.</h2>
+        <p data-anim="up" style="--d:.16s">Every initiative begins with people who choose to care. Here's the change we've created — together.</p>
+      </div>
+      <div class="stories-grid">
+        <article class="story" data-anim="up">
+          <div class="story-media ph img-reveal"><span class="badge">📚 Education Kits</span><img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=700&q=80" alt="Students starting their school year with new supplies" onerror="this.style.display='none'"></div>
+          <div class="story-body">
+            <h3>300+ Students Began Their School Year With Confidence.</h3>
+            <p>Together, we helped children receive school bags and learning essentials, giving them the opportunity to continue their education with confidence.</p>
+            <a href="#" class="story-link">Read The Story →</a>
+          </div>
+        </article>
+        <article class="story" data-anim="up" style="--d:.1s">
+          <div class="story-media ph img-reveal wipe-green"><span class="badge">🩸 Blood Donation Camp</span><img src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?auto=format&fit=crop&w=700&q=80" alt="Donors at a blood donation camp" onerror="this.src='https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=700&q=80';this.onerror=function(){this.style.display='none'}"></div>
+          <div class="story-body">
+            <h3>Hundreds Of Donors Came Together To Save Lives.</h3>
+            <p>Your support helped organise a blood donation camp where every donation had the potential to become someone's second chance.</p>
+            <a href="#" class="story-link">See The Impact →</a>
+          </div>
+        </article>
+        <article class="story" data-anim="up" style="--d:.2s">
+          <div class="story-media ph img-reveal wipe-yellow"><span class="badge">🍛 Relief Drive</span><img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=700&q=80" alt="Volunteers distributing essential supplies" onerror="this.style.display='none'"></div>
+          <div class="story-body">
+            <h3>Families Received Support When They Needed It Most.</h3>
+            <p>Together, we distributed essential supplies to families facing difficult circumstances, bringing relief when it mattered most.</p>
+            <a href="#" class="story-link">View Initiative →</a>
+          </div>
+        </article>
+        <article class="story" data-anim="up">
+          <div class="story-media ph img-reveal wipe-green"><span class="badge">🧥 Winter Clothing</span><img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=80" alt="Warm clothing prepared for distribution" onerror="this.style.display='none'"></div>
+          <div class="story-body">
+            <h3>Warmth Reached Communities During Winter.</h3>
+            <p>With your support, warm clothing reached people who needed protection from the cold, bringing comfort and dignity during the winter season.</p>
+            <a href="#" class="story-link">Read More →</a>
+          </div>
+        </article>
+        <article class="story" data-anim="up" style="--d:.1s">
+          <div class="story-media ph img-reveal"><span class="badge">❤️ Health Awareness</span><img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=700&q=80" alt="A community health awareness session" onerror="this.style.display='none'"></div>
+          <div class="story-body">
+            <h3>Communities Took A Step Towards Better Health.</h3>
+            <p>Health awareness programs reached more people with the knowledge and support needed to make informed healthcare decisions.</p>
+            <a href="#" class="story-link">Explore Event →</a>
+          </div>
+        </article>
+        <article class="story" data-anim="up" style="--d:.2s">
+          <div class="story-media ph img-reveal wipe-yellow"><span class="badge">🎉 Community Celebration</span><img src="https://images.unsplash.com/photo-1514222709107-a180c68d72b4?auto=format&fit=crop&w=700&q=80" alt="A joyful community festival celebration" onerror="this.src='https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=700&q=80';this.onerror=function(){this.style.display='none'}"></div>
+          <div class="story-body">
+            <h3>Creating Moments Of Joy Beyond Everyday Challenges.</h3>
+            <p>Celebrating festivals together helped bring communities closer, creating memories filled with belonging, hope, and happiness.</p>
+            <a href="#" class="story-link">See Gallery →</a>
+          </div>
+        </article>
+      </div>
+      <div class="change-cta" data-anim="up"><a href="#donate" class="btn btn-green">Create The Next Story ♥</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 06 — DONATION FORM ============ -->
+<section id="donate" style="padding-top:0">
+  <div class="wrap">
+    <div class="donate" data-anim="up">
+      <div class="donate-inner">
+        <div class="donate-copy">
+          <div class="donate-photo img-reveal"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=80" alt="A child whose future your donation supports" onerror="this.style.display='none'"></div>
+          <div class="donate-copy-text">
+            <span class="eyebrow">Make A Donation</span>
+            <h2 class="display">One Gift. Many Lives Changed.</h2>
+            <p>Your contribution goes directly into education kits, healthcare support, blood donation camps, and essential relief for families across India.</p>
+            <ul class="trust-list">
+              <li>Donations are eligible for tax benefits under Section 80G</li>
+              <li>Regular impact updates from every initiative you support</li>
+              <li>100% of your gift powers community programs</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pay-panel">
+          <h3>Donate To Help ♥</h3>
+          <p class="pay-sub">No forms, no sign-ups. Scan the QR with any UPI app, or transfer directly to our bank account.</p>
+          <div class="pay-tabs" role="tablist" aria-label="Payment method">
+            <button type="button" class="on" data-tab="upi" role="tab" aria-selected="true">📱 Scan &amp; Pay (UPI)</button>
+            <button type="button" data-tab="bank" role="tab" aria-selected="false">🏦 Bank Transfer</button>
+          </div>
+
+          <div class="pay-tab-body" id="tab-upi">
+            <div class="qr-card">
+              <div class="qr-frame">
+                <div id="qrBox" aria-label="UPI payment QR code"></div>
+                <span class="qr-corner tl"></span><span class="qr-corner tr"></span><span class="qr-corner bl"></span><span class="qr-corner br"></span>
+              </div>
+              <div class="qr-side">
+                <span class="qr-badge">✓ Verified UPI</span>
+                <p class="qr-hint">Open any UPI app and scan this code to donate instantly.</p>
+                <div class="upi-apps"><span>GPay</span><span>PhonePe</span><span>Paytm</span><span>BHIM</span></div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div><label>UPI ID</label><b id="upiId">vallabhifoundation@upi</b></div>
+              <button type="button" class="copy-btn" data-copy="vallabhifoundation@upi">Copy</button>
+            </div>
+          </div>
+
+          <div class="pay-tab-body" id="tab-bank" hidden>
+            <div class="detail-row">
+              <div><label>Account Name</label><b>Vallabhi Foundation</b></div>
+              <button type="button" class="copy-btn" data-copy="Vallabhi Foundation">Copy</button>
+            </div>
+            <div class="detail-row">
+              <div><label>Account Number</label><b>1234 5678 9012 4521</b></div>
+              <button type="button" class="copy-btn" data-copy="1234567890124521">Copy</button>
+            </div>
+            <div class="detail-row">
+              <div><label>IFSC Code</label><b>SBIN0001234</b></div>
+              <button type="button" class="copy-btn" data-copy="SBIN0001234">Copy</button>
+            </div>
+            <div class="detail-row">
+              <div><label>Bank &amp; Branch</label><b>State Bank of India, Vadodara</b></div>
+              <button type="button" class="copy-btn" data-copy="State Bank of India, Vadodara">Copy</button>
+            </div>
+          </div>
+
+          <div class="receipt-note">
+            <span>🧾</span>
+            <p>After donating, share your payment screenshot on <b>WhatsApp 95684 52147</b> or <b>hello@vallabhifoundation.org</b> to receive your <b>80G tax receipt</b>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 07 — CSR ============ -->
+<section id="csr" style="padding-top:0">
+  <div class="wrap">
+    <div class="csr" data-anim="up">
+      <div class="csr-photo ph img-reveal wipe-green"><img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=900&q=80" alt="Partners and volunteers working together" onerror="this.style.display='none'"></div>
+      <div class="csr-body">
+        <span class="eyebrow" style="color:var(--yellow)">CSR &amp; Partnerships</span>
+        <h2 class="display">Create Greater <span>Impact Together.</span></h2>
+        <p>Real change grows stronger through meaningful partnerships. Whether you're an individual looking to contribute or an organisation committed to social responsibility, together we can create lasting impact for communities across India.</p>
+        <a href="#" class="btn btn-yellow">Partner With Us →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 08 — FAQ ============ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" style="color:var(--secondary)" data-anim="up">FAQ</span>
+      <h2 class="display" data-anim="up" style="--d:.08s">Questions? We're Here To Help.</h2>
+    </div>
+    <div class="faq-wrap">
+      <details class="faq" open data-anim="up">
+        <summary>Are donations eligible for tax benefits? <span class="plus">+</span></summary>
+        <p class="answer">Yes. Eligible donations qualify under Section 80G of the Income Tax Act.</p>
+      </details>
+      <details class="faq" data-anim="up" style="--d:.08s">
+        <summary>How do I know my contribution is making an impact? <span class="plus">+</span></summary>
+        <p class="answer">We regularly share updates from our initiatives so you can see the communities your support helps strengthen.</p>
+      </details>
+      <details class="faq" data-anim="up" style="--d:.16s">
+        <summary>Can I volunteer with Vallabhi Foundation? <span class="plus">+</span></summary>
+        <p class="answer">Absolutely. We welcome individuals who want to contribute their time and skills.</p>
+      </details>
+      <details class="faq" data-anim="up" style="--d:.24s">
+        <summary>Can organisations partner with Vallabhi Foundation? <span class="plus">+</span></summary>
+        <p class="answer">Yes. We actively collaborate with organisations through CSR initiatives and community partnerships.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<div class="final">
+  <h2 class="display" data-anim="zoom">One Act Of Kindness Can Strengthen An <em>Entire Community.</em></h2>
+  <p data-anim="up" style="--d:.15s">Every opportunity begins with someone choosing to help. Today, that someone could be you.</p>
+  <a href="#donate" class="btn btn-yellow" data-anim="up" style="--d:.28s">Create Change Today ♥</a>
+</div>
+
+<!-- ============ VOLUNTEER STRIP ============ -->
+<div class="volunteer" id="volunteer">
+  <div class="wrap">
+    <div class="vol-photo"><div class="ph img-reveal wipe-yellow"><img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800&q=80" alt="Volunteers joining hands together" onerror="this.style.display='none'"></div></div>
+    <div class="vol-text" data-anim="left">
+      <h3>Be Part Of The Change You Want To See.</h3>
+      <p>From community drives to healthcare initiatives, every helping hand brings us one step closer to stronger communities.</p>
+    </div>
+    <a href="#" class="btn btn-white" data-anim="right">Volunteer With Us →</a>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo">
+          <span class="logo-mark">V</span>
+          <span class="logo-text">Vallabhi<small>FOUNDATION</small></span>
+        </div>
+        <p>Creating equal access to education, healthcare, and community support across India since 2017.</p>
+        <div class="f-socials">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="X (Twitter)">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Our Work</h4>
+        <a href="#what-we-do">Education</a>
+        <a href="#what-we-do">Healthcare</a>
+        <a href="#what-we-do">Women Empowerment</a>
+        <a href="#what-we-do">Blood Donation</a>
+        <a href="#what-we-do">Community Welfare</a>
+        <a href="#what-we-do">Rural Development</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get Involved</h4>
+        <a href="#donate">Donate</a>
+        <a href="#volunteer">Volunteer</a>
+        <a href="#csr">CSR Partnerships</a>
+        <a href="#impact">Our Impact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@vallabhifoundation.org">hello@vallabhifoundation.org</a>
+        <a href="tel:+919568452147">+91 95684 52147</a>
+        <a href="#">Vadodara, Gujarat, India</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Vallabhi Foundation. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a> · <a href="#">Terms</a> · Registered under Section 80G</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== Hero headline rotator =====
+const words = ['Education','Healthcare','Opportunity','Dignity'];
+const rot = document.getElementById('rotator');
+let wi = 0;
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (rot && !reduced){
+  setInterval(() => {
+    rot.style.opacity = 0; rot.style.transform = 'translateY(10px)';
+    rot.style.transition = 'opacity .35s, transform .35s';
+    setTimeout(() => {
+      wi = (wi + 1) % words.length; rot.textContent = words[wi];
+      rot.style.opacity = 1; rot.style.transform = 'none';
+    }, 380);
+  }, 3200);
+}
+
+// ===== Expanding cause columns =====
+const causes = document.querySelectorAll('.cause');
+causes.forEach(c => {
+  const activate = () => { causes.forEach(x => x.classList.remove('active')); c.classList.add('active'); };
+  c.addEventListener('mouseenter', activate);
+  c.addEventListener('click', activate);
+  c.addEventListener('focus', activate, true);
+  c.setAttribute('tabindex','0');
+});
+
+// ===== Scroll reveal (staggered) =====
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+  });
+}, {threshold:.15, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('[data-anim], .img-reveal').forEach(el => io.observe(el));
+
+// ===== Counters =====
+const counterIO = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    const el = en.target, target = +el.dataset.target, dur = 1400, t0 = performance.now();
+    if (reduced){ el.textContent = target; counterIO.unobserve(el); return; }
+    const tick = now => {
+      const p = Math.min((now - t0) / dur, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    counterIO.unobserve(el);
+  });
+}, {threshold:.6});
+document.querySelectorAll('.count').forEach(el => counterIO.observe(el));
+
+// ===== Gentle parallax (hero image + band orbs) =====
+const hero = document.getElementById('heroParallax');
+const pxEls = document.querySelectorAll('[data-parallax]');
+if (!reduced){
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      if (hero && y < 900) hero.style.transform = 'translateY(' + (y * 0.08) + 'px)';
+      pxEls.forEach(el => {
+        const r = el.getBoundingClientRect();
+        const mid = r.top + r.height/2 - window.innerHeight/2;
+        el.style.transform = 'translateY(' + (mid * +el.dataset.parallax) + 'px)';
+      });
+      ticking = false;
+    });
+  }, {passive:true});
+}
+
+// ===== Donation panel: tabs, copy, QR =====
+document.querySelectorAll('.pay-tabs button').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.pay-tabs button').forEach(x => { x.classList.remove('on'); x.setAttribute('aria-selected','false'); });
+    b.classList.add('on'); b.setAttribute('aria-selected','true');
+    document.getElementById('tab-upi').hidden = b.dataset.tab !== 'upi';
+    document.getElementById('tab-bank').hidden = b.dataset.tab !== 'bank';
+  });
+});
+document.querySelectorAll('.copy-btn').forEach(b => {
+  b.addEventListener('click', async () => {
+    try{
+      await navigator.clipboard.writeText(b.dataset.copy);
+      const t = b.textContent; b.textContent = 'Copied ✓'; b.classList.add('done');
+      setTimeout(() => { b.textContent = t; b.classList.remove('done'); }, 1800);
+    }catch(e){ b.textContent = 'Select & copy'; }
+  });
+});
+// Generate real scannable UPI QR (falls back to placeholder pattern if library unavailable)
+(function(){
+  const box = document.getElementById('qrBox');
+  if (!box) return;
+  const upiString = 'upi://pay?pa=vallabhifoundation@upi&pn=Vallabhi%20Foundation&cu=INR';
+  function fallback(){
+    box.innerHTML = '<div class="qr-fallback">Place your official<br>UPI QR code here</div>';
+  }
+  const s = document.createElement('script');
+  s.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+  s.onload = () => { try { new QRCode(box, {text: upiString, width: 168, height: 168, correctLevel: QRCode.CorrectLevel.M}); } catch(e){ fallback(); } };
+  s.onerror = fallback;
+  document.body.appendChild(s);
+})();
+
+// ===== Journey progress line =====
+const journey = document.getElementById('journey');
+const jProg = document.getElementById('journeyProgress');
+const jDots = document.querySelectorAll('.j-dot');
+if (journey && jProg && !reduced){
+  const onScroll = () => {
+    const r = journey.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const total = r.height - vh * .4;
+    const passed = Math.min(Math.max(vh * .6 - r.top, 0), total);
+    const pct = total > 0 ? passed / total : 0;
+    jProg.style.height = (pct * 100) + '%';
+    const lineTop = r.top;
+    jDots.forEach(d => {
+      const dr = d.getBoundingClientRect();
+      d.classList.toggle('lit', dr.top + dr.height/2 < vh * .62);
+    });
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+} else if (jProg){ jProg.style.height = '100%'; jDots.forEach(d => d.classList.add('lit')); }
+</script>
+</body>
+</html>
